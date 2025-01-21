@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/api")
+@RequestMapping("/api/public")
 @RestController
 public class ProductController {
 
@@ -27,7 +27,7 @@ public class ProductController {
     @PostMapping("/products")
     public ResponseEntity<String> createProduct(@RequestBody Product product){
         productService.createProduct(product);
-        return new ResponseEntity<>("Category Created", HttpStatus.CREATED);
+        return new ResponseEntity<>("Product Created", HttpStatus.CREATED);
     }
 
     @GetMapping("/products/{id}")
